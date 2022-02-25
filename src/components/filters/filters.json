@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_filters_filters",
+  "info": {
+    "displayName": "Filters",
+    "icon": "plus-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "countries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::country.country"
+    },
+    "document_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::document-type.document-type"
+    },
+    "generation_sources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::generation-source.generation-source"
+    },
+    "years": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::year.year"
+    },
+    "co_authors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::co-author.co-author"
+    },
+    "publishing_organizations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::publishing-organization.publishing-organization"
+    },
+    "regions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::region.region"
+    },
+    "segments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::segment.segment"
+    }
+  }
+}

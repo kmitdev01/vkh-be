@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reports",
+  "info": {
+    "singularName": "report",
+    "pluralName": "reports",
+    "displayName": "Report",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ReportName": {
+      "type": "string"
+    },
+    "URL": {
+      "type": "string"
+    },
+    "AddFilters": {
+      "displayName": "Filters",
+      "type": "component",
+      "repeatable": false,
+      "component": "filters.filters"
+    }
+  }
+}

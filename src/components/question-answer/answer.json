@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_question_answer_answers",
+  "info": {
+    "displayName": "Answer",
+    "icon": "plus-square",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Answer": {
+      "type": "string"
+    },
+    "NextQuestion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::question.question"
+    },
+    "KeyPublication": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::report.report"
+    },
+    "NonKeyPublication": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::report.report"
+    }
+  }
+}

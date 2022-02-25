@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "question_lists",
+  "info": {
+    "singularName": "question-list",
+    "pluralName": "question-lists",
+    "displayName": "Question List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "QuestionType": {
+      "type": "enumeration",
+      "enum": [
+        "Questionnaire",
+        "Step"
+      ],
+      "required": true
+    },
+    "AddAnswer": {
+      "displayName": "Answer",
+      "type": "component",
+      "repeatable": true,
+      "component": "question-answer.answer"
+    },
+    "MainQuestion": {
+      "displayName": "Question",
+      "type": "component",
+      "repeatable": false,
+      "component": "main-question.question"
+    }
+  }
+}

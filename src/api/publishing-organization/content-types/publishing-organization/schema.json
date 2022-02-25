@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publishing_organizations",
+  "info": {
+    "singularName": "publishing-organization",
+    "pluralName": "publishing-organizations",
+    "displayName": "Publishing Organization"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PublishingOrganization": {
+      "type": "string"
+    }
+  }
+}

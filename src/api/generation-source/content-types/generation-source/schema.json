@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "generation_sources",
+  "info": {
+    "singularName": "generation-source",
+    "pluralName": "generation-sources",
+    "displayName": "Generation source"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "GenerationSource": {
+      "type": "string"
+    }
+  }
+}

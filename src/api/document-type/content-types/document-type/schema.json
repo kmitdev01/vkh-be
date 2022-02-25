@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "document_types",
+  "info": {
+    "singularName": "document-type",
+    "pluralName": "document-types",
+    "displayName": "Document type"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "DocumentType": {
+      "type": "string"
+    }
+  }
+}

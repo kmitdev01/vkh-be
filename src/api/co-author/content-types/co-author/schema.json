@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "co_authors",
+  "info": {
+    "singularName": "co-author",
+    "pluralName": "co-authors",
+    "displayName": "Co Author"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AuthorName": {
+      "type": "string"
+    }
+  }
+}

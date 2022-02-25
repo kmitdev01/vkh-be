@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_select_question_questions",
+  "info": {
+    "displayName": "Question",
+    "icon": "plus",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::question.question"
+    }
+  }
+}
