@@ -23,6 +23,14 @@
       "type": "component",
       "repeatable": false,
       "component": "filters.filters"
+    },
+    "KeyPublication": {
+      "type": "enumeration",
+      "enum": [
+        "Yes",
+        "No"
+      ],
+      "default": "Yes"
     }
   }
 }
