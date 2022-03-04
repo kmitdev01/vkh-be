@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "filters",
+  "info": {
+    "singularName": "filter",
+    "pluralName": "filters",
+    "displayName": "Filters",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AllFilters": {
+      "displayName": "All Filters",
+      "type": "component",
+      "repeatable": false,
+      "component": "all-filters.all-filters"
+    }
+  }
+}

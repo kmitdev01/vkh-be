@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_all_filters_all_filters",
+  "info": {
+    "displayName": "All Filters",
+    "icon": "folder-plus",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "countries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::country.country"
+    },
+    "document_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::document-type.document-type"
+    },
+    "co_authors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::co-author.co-author"
+    },
+    "years": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::year.year"
+    }
+  }
+}
