@@ -31,6 +31,9 @@
         "No"
       ],
       "default": "Yes"
+    },
+    "Description": {
+      "type": "text"
     }
   }
 }
