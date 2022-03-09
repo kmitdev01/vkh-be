@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "question_key_types",
+  "info": {
+    "singularName": "question-key-type",
+    "pluralName": "question-key-types",
+    "displayName": "Question Key Type"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "QuestionKeyType": {
+      "type": "string"
+    }
+  }
+}
