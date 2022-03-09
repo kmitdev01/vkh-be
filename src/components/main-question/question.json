@@ -11,11 +11,6 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::question.question"
-    },
-    "QuestionTypeKey": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::question-type-key.question-type-key"
     }
   }
 }
