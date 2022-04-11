@@ -13,11 +13,9 @@
     "@strapi/plugin-i18n": "4.1.0",
     "@strapi/plugin-users-permissions": "4.1.0",
     "@strapi/strapi": "4.1.0",
-    "axios": "^0.26.1",
     "convert-array-to-csv": "^2.0.0",
     "csv-writer": "^1.6.0",
     "fs": "^0.0.1-security",
-    "json2csv": "^5.0.7",
     "nodemailer": "^6.7.3",
     "pg": "^8.7.3",
     "pg-connection-string": "^2.5.0"
