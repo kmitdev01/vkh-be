@@ -8,51 +8,41 @@ const fs = require('fs');
 module.exports = createCoreController('api::newsletter.newsletter', ({ strapi }) => ({
     /// Function for sending CSV on email
     async sendCsv(ctx) {
-        // try {
-        //     const mailChimpResponse = await axios({
-        //         method: 'POST',
-        //         url: "https://mandrillapp.com/api/1.0/messages/send-template",
-        //         data: {
-        //             "key": "ovIMd3hGxCH6kEYeCaGTKw1",
-        //             "template_name": "Demo2",
-        //             "template_content": {
-        //                 "name": "",
-        //                 "content": ""
-        //             },
-        //             "message": {
-        //                 "from_email": "shiven@keymouseit.com",
-        //                 "from_name": "Shiven Juneja",
-        //                 "subject": "Test Email",
-        //                 "text": "Hello Juneja, this is just a test email to check the working",
-        //                 "to": [
-        //                     {
-        //                         "email": ctx.request.body.data.Email,
-        //                         "name": ctx.request.body.data.Name
-        //                     }
-        //                 ]
-        //             }
-        //         }
-        //     });
-        //     return mailChimpResponse.data
-        // } catch (error) {
-        //     return
-        //     // return error.response;
-        //     //return error.response.setErrorMessage(e.getMessage());
 
-        //     //Which one
-        //     //this one 5xx
-        //     //error.response.setStatusCode(500);
-        //     //Or this one 4xx
-        //     // error.response.setStatusCode(409);
-        // }
+        const filterIds = ctx.request.body.data.filters;
+        const reportIds = ctx.request.body.data.reports;
+        const searchQuery = ctx.request.body.data.searchTerm;
+        const filtersKey = Object.keys(filterIds);
+        const filtersQuery = {};
+        filtersKey.map((item) => {
+            if (filterIds[item].length) {
+                filtersQuery[item] = {
+                    id: {
+                        $in: Number(filterIds[item])
+                    },
+                }
+            }
+        });
 
+        let reportIdsQuery = {}
+
+        if (reportIds.length) {
+            reportIdsQuery = {
+                id: {
+                    $in: reportIds,
+                },
+            }
+        }
 
         const finalReports = await strapi.db.query('api::report.report').findMany({
             where: {
-                id: {
-                    $in: ctx.request.body.data.reports,
+                AddFilters: filtersQuery,
+                ReportName: {
+                    $containsi: searchQuery
                 },
+                ...reportIdsQuery
             },
+
             populate: {
                 AddFilters: {
                     populate: {
@@ -116,12 +106,40 @@ module.exports = createCoreController('api::newsletter.newsletter', ({ strapi })
     /////// //////// Download CSV Function ///////////////////////////
 
     async downloadCsv(ctx) {
+
+        const filterIds = ctx.request.body.data.filters;
+        const reportIds = ctx.request.body.data.reports;
+        const searchQuery = ctx.request.body.data.searchTerm;
+        const filtersKey = Object.keys(filterIds);
+        const filtersQuery = {};
+        filtersKey.map((item) => {
+            if (filterIds[item].length) {
+                filtersQuery[item] = {
+                    id: {
+                        $in: Number(filterIds[item])
+                    },
+                }
+            }
+        });
+
+        let reportIdsQuery = {}
+        if (reportIds.length) {
+            reportIdsQuery = {
+                id: {
+                    $in: reportIds,
+                },
+            }
+        }
+
         const finalReports = await strapi.db.query('api::report.report').findMany({
             where: {
-                id: {
-                    $in: ctx.request.body.data.reports,
+                AddFilters: filtersQuery,
+                ReportName: {
+                    $containsi: searchQuery
                 },
+                ...reportIdsQuery
             },
+
             populate: {
                 AddFilters: {
                     populate: {
@@ -132,28 +150,6 @@ module.exports = createCoreController('api::newsletter.newsletter', ({ strapi })
                 }
             }
         });
-
-        // const req = {
-        //     countries: [3, 8, 19,],
-        //     years: [4, 5, 9]
-        // }
-        // const filteredReports = finalReports.filter(report => {
-        //     let result = false;
-        //     const { AddFilters } = report;
-        //     const filtersToMatch = Object.keys(req);
-        //     for (let i = 0; i < filtersToMatch.length; i++) {
-        //         console.log(filtersToMatch, filtersToMatch[i], AddFilters[filtersToMatch[i]]);
-        //         const reportFilterIds = AddFilters[filtersToMatch[i]].map(filter => filter.id);
-        //         const isEqual = reportFilterIds.sort().toString() == req[filtersToMatch[i]].sort().toString();
-        //         if (isEqual) {
-        //             result = true;
-        //         }
-        //     }
-        //     return result;
-        // })
-        // return filteredReports;
-
-        // console.log(filterData);
 
         const data = finalReports.map((item) => {
             const countries = item?.AddFilters?.countries[0]?.CountryName;
