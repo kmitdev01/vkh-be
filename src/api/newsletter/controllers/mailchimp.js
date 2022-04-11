@@ -91,12 +91,9 @@ module.exports = createCoreController('api::newsletter.newsletter', ({ strapi })
                 },
             ],
         };
-        const result = { status: "success", "msg": "Email sent successfully" }
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                console.log(error);
-            }
-        });
+        let mailResponse = await transporter.sendMail(mailOptions);
+        const result = { status: mailResponse }
+
         return { result }
     },
 
