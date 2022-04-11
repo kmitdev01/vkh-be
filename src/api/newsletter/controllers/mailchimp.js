@@ -75,12 +75,12 @@ module.exports = createCoreController('api::newsletter.newsletter', ({ strapi })
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'kmitdev1@gmail.com',
-                pass: 'Admin@123@#'
+                user: process.env.EMAIL_USERNAME || 'kmitdev1@gmail.com',
+                pass: process.env.EMAILPASSWORD || 'Admin@123@#'
             }
         });
         const mailOptions = {
-            from: 'kmitdev1@gmail.com',
+            from: process.env.EMAIL_FROM || 'kmitdev1@gmail.com',
             to: ctx.request.body.data.Email,
             subject: 'CSV From VKH',
             html: htmlTemplate,
