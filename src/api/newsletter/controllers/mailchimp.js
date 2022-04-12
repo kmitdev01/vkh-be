@@ -82,7 +82,7 @@ module.exports = createCoreController('api::newsletter.newsletter', ({ strapi })
         const mailOptions = {
             from: process.env.EMAIL_FROM,
             to: ctx.request.body.data.Email,
-            subject: 'CSV From VKH',
+            subject: 'Your resource list from SEforALL Knowledge Hub',
             html: htmlTemplate,
             attachments: [
                 {
