@@ -36,7 +36,7 @@
       "type": "string"
     },
     "ToolTipText": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
