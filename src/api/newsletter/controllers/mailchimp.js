@@ -54,7 +54,6 @@ module.exports = createCoreController('api::newsletter.newsletter', ({ strapi })
             }
         });
 
-
         const data = finalReports.map((item) => {
             const countries = item?.AddFilters?.countries[0]?.CountryName;
             const publishing_organizations = item?.AddFilters?.publishing_organizations[0]?.PublishingOrganization;
