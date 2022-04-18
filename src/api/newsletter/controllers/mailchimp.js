@@ -18,7 +18,7 @@ module.exports = createCoreController('api::newsletter.newsletter', ({ strapi })
             if (filterIds[item].length) {
                 filtersQuery[item] = {
                     id: {
-                        $in: Number(filterIds[item])
+                        $in: filterIds[item]
                     },
                 }
             }
@@ -112,7 +112,7 @@ module.exports = createCoreController('api::newsletter.newsletter', ({ strapi })
             if (filterIds[item].length) {
                 filtersQuery[item] = {
                     id: {
-                        $in: Number(filterIds[item])
+                        $in: filterIds[item]
                     },
                 }
             }
