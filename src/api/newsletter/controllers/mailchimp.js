@@ -67,6 +67,7 @@ module.exports = createCoreController('api::newsletter.newsletter', ({ strapi })
             };
         });
 
+
         const htmlTemplate = fs.readFileSync(__dirname + '/KnowledgeHub.html', 'utf-8');
 
         const csvData = convertArrayToCSV(data);
